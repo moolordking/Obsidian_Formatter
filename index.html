@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="bin/style.css" />
+	<title>Obsidian Formatter</title>
+</head>
+<body>
+	<div id="MENU">
+		<label class="MENU_ITEM" for="uploaded_file" id="UPLOAD_BUTTON">Upload .md File</label>
+		<input class="MENU_ITEM" type="file" name="datafile" id="uploaded_file" onchange="load_file()" style="display: none;" hidden/>
+		<button class="MENU_ITEM" onclick="toggle_date()">Toggle Date</button>
+		<button class="MENU_ITEM" onclick="print_page()">Print to PDF</button>
+		<div class="dropdown">
+			<button class="MENU_ITEM" id="FONTS">Font: Calibri</button>
+			<div class="dropdown-content">
+				<a onclick="font_change('Calibri')">Calibri</a>
+				<a onclick="font_change('Times New Roman')">Times New Roman</a>
+				<a onclick="font_change('Arial')">Arial</a>
+				<a onclick="font_change('Comic Sans MS')">Comic Sans MS</a>
+				<a onclick="font_change('Garamond')">Garamond</a>
+				<a onclick="font_change('Courier New')">Courier New</a>
+			</div>
+		</div>
+		<input class="MENU_ITEM" id="FONT_SIZE" type="range" min="8" max="72" value="11" onmousemove="font_size(this)" onclick="font_size(this)" />
+		<div class="MENU_ITEM" id="FONT_SIZE_DISPLAY">11</div>
+		<input type="text" id="NAME" class="MENU_ITEM" placeholder="Name" onchange="set_name(this.value)" />
+	</div>
+	<div id="CONTAINER">
+		<div id="OUT" class="EDITING" contenteditable="true">DOCUMENT OUTPUTTED HERE</div>
+	</div>
+	
+	<script src="bin/main.js"></script>
+</body>
+</html>
